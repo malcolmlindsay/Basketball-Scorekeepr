@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --base-color: #fdf1f1dd;
+    --base-color-2: #facecedd;
+    --away-color: rgb(5, 59, 184);
+    --home-color: rgb(190, 12, 12);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--base-color);
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px 0;
+}
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+.scoreboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 20px 10px;
+}
+
+#home { background: var(--home-color); color: white;}
+#away { background: var(--away-color); color: white;}
+
+#possesion { text-align: center; }
+#left-poss, #right-poss { margin: 4px; }
+.has-poss { 
+    color: rgb(255, 242, 0);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+.timeout-container { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0;
+}
+.timeout { 
+    background-color: rgb(238, 242, 17);
+    width: .5rem;
+    height: .5rem;
+    border-radius: 100%;
+    box-shadow: 0 1px 2px 0 black;
+    margin: 2px;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid rgb(2, 0, 2);
+  }
+  
+  thead th:nth-child(1) {
+    width: 40%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 30%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 30%;
+  }
+  
+  th,
+  td {
+    padding: 5px;
+    text-align: center;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: var(--base-color-2);
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: var(--base-color);
+  }
+
+.control-panel {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 20px;
+}
+.control-btns {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 0 15px;
+}
+
+.control-btns > div {
+    background-color: var(--base-color-2);
+    padding: 5px 10px;
+    margin: 4px 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.control-btns > div:hover { border: 2px solid black; margin: 2px -2px;}
+.control-btns > div:nth-child(odd) { background-color: rgb(186, 236, 183);}

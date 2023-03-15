@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Basketball Scorekeeper</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+
+</head>
+<body>
+    <div class="app">
+        <div class="scoreboard">
+            <div id="home" class="team-info">
+                <h1 class="team-name">AWAY</h1>
+                <h1 class="score">0</h1>
+                <div class="timeout-container">
+                    <div class="timeout"></div>
+                    <div class="timeout"></div>
+                    <div class="timeout"></div>
+                    <div class="timeout"></div>
+                    <div class="timeout"></div>
+                </div>
+            </div>
+            <div id="possesion">
+                <h2>20:00</h2>
+                <h2>Poss</h2>
+                <h2><span id="left-poss" class="has-poss"><</span>
+                    <span id="right-poss">></span>
+                </h2>
+            </div>
+            <div id="away" class="team-info">
+                <h1 class="team-name">HOME</h1>
+                <h1 class="score">0</h1>
+                <div class="timeout-container">
+                    <div class="timeout"></div>
+                    <div class="timeout"></div>
+                    <div class="timeout"></div>
+                    <div class="timeout"></div>
+                    <div class="timeout"></div>
+                </div>
+            </div>
+        </div>
+        <div class="control-panel">
+            <div class="control-btns">
+                <div onclick=updateAwayScore(2) class="2fg-away">2PT FG GOOD</div>
+                <div onclick=updateAwayMiss(2) class="2fg-miss-away">2PT FG MISS</div>
+                <div onclick=updateAwayScore(3) class="3fg-away">3PT FG GOOD</div>
+                <div onclick=updateAwayMiss(3) class="3fg-miss-away">3PT FG MISS</div>
+                <div onclick=updateAwayScore(1) class="ft-away">FT GOOD</div>
+                <div onclick=updateAwayMiss(1) class="ft-miss-away">FT MISS</div>
+            </div>
+            <div class="control-btns">
+                <div onclick=updateHomeScore(2) class="fg-home">2PT FG GOOD</div>
+                <div onclick=updateHomeMiss(2) class="fg-miss-home">2PT FG MISS</div>
+                <div onclick=updateHomeScore(3) class="3fg-home">3PT FG GOOD</div>
+                <div onclick=updateHomeMiss(3) class="3fg-miss-home">3PT FG MISS</div>
+                <div onclick=updateHomeScore(1) class="ft-home">FT GOOD</div>
+                <div onclick=updateHomeMiss(1) class="ft-miss-home">FT MISS</div>
+            </div>
+        </div>
+
+        <table id="team-stats">
+            <thead>
+                <tr>
+                    <th scope="col">TEAM STATS</th>
+                    <th scope="col">AWAY</th>
+                    <th scope="col">HOME</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">FG</td>
+                    <td id="FG-away" >0 - 0</td>
+                    <td id="FG-home">0 - 0</td>
+                </tr>
+                <tr>
+                    <td scope="row">Field Goal %</td>
+                    <td id="FG-prc-away">0%</td>
+                    <td id="FG-prc-home">0%</td>
+                </tr>
+                <tr>
+                    <td scope="row">3PT</td>
+                    <td id="3PT-away">0 - 0</td>
+                    <td id="3PT-home">0 - 0</td>
+                </tr>
+                <tr>
+                    <td scope="row">Three Point %</td>
+                    <td id="3PT-prc-away">0%</td>
+                    <td id="3PT-prc-home">0%</td>
+                </tr>
+                <tr>
+                    <td id="FT" scope="row">FT</td>
+                    <td id="FT-away">0 - 0</td>
+                    <td id="FT-home">0 - 0</td>
+                </tr>
+                <tr>
+                    <td scope="row">Free Throw %</td>
+                    <td id="FT-prc-away">0%</td>
+                    <td id="FT-prc-home">0%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
