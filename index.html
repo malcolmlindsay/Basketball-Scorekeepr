@@ -14,33 +14,37 @@
 <body>
     <div class="app">
         <div class="scoreboard">
-            <div id="home" class="team-info">
-                <h1 class="team-name">AWAY</h1>
-                <h1 class="score">0</h1>
-                <div class="timeout-container">
-                    <div class="timeout"></div>
-                    <div class="timeout"></div>
-                    <div class="timeout"></div>
-                    <div class="timeout"></div>
-                    <div class="timeout"></div>
+            <div class="scores">
+                <div id="home" class="team-info">
+                    <h1 class="team-name">AWAY</h1>
+                    <h1 class="score">0</h1>
+                    <div class="timeout-container">
+                        <div class="timeout"></div>
+                        <div class="timeout"></div>
+                        <div class="timeout"></div>
+                        <div class="timeout"></div>
+                        <div class="timeout"></div>
+                    </div>
+                </div>
+                <div id="away" class="team-info">
+                    <h1 class="team-name">HOME</h1>
+                    <h1 class="score">0</h1>
+                    <div class="timeout-container">
+                        <div class="timeout"></div>
+                        <div class="timeout"></div>
+                        <div class="timeout"></div>
+                        <div class="timeout"></div>
+                        <div class="timeout"></div>
+                    </div>
                 </div>
             </div>
             <div id="possesion">
-                <h2>20:00</h2>
-                <h2>Poss</h2>
-                <h2><span id="left-poss" class="has-poss"><</span>
+                <h2 id="clock">20:00</h2>
+                <button onclick=startTimer() id="start" class="timer-btn">Start</button>
+                <button onclick=pauseTimer() id="pause" class="timer-btn">Pause</button>
+                <button onclick=resetTimer() id="reset" class="timer-btn">Reset</button>
+                <div onclick=togglePossession() class="possession-arrows"><span id="left-poss" class="has-poss"><</span>
                     <span id="right-poss">></span>
-                </h2>
-            </div>
-            <div id="away" class="team-info">
-                <h1 class="team-name">HOME</h1>
-                <h1 class="score">0</h1>
-                <div class="timeout-container">
-                    <div class="timeout"></div>
-                    <div class="timeout"></div>
-                    <div class="timeout"></div>
-                    <div class="timeout"></div>
-                    <div class="timeout"></div>
                 </div>
             </div>
         </div>

@@ -1,3 +1,5 @@
+
+// update scores and stats
 function updateHomeMiss(points) {
     switch (points) {
         case 1:
@@ -12,6 +14,8 @@ function updateHomeMiss(points) {
             break;
     }
     updateHomeTable();
+
+    console.log(`${min}:${sec} H1 - HOME Two point shot missed. - ${awayScore} - ${homeScore}.`)
 }
 
 function updateAwayMiss(points) {  
@@ -78,7 +82,7 @@ function updateAwayScore(points) {
     updateAwayTable();
 }
 
-
+// update and render stats tables
 function updateAwayTable() {
     let fgEl = document.getElementById('FG-away');
     let fg3El = document.getElementById('3PT-away');
@@ -133,3 +137,61 @@ let awayScore = 0;
 
 let homeScoreEl = document.getElementsByClassName("score")[1];
 let awayScoreEl = document.getElementsByClassName("score")[0];
+
+// CLock and clock control button functions
+let clockEl = document.getElementById("clock");
+
+let totalSeconds = 1200;
+let playLive = false;
+
+let min = 20;
+let sec = 0;
+
+var gameTimer;
+
+function startTimer() {
+    // if clock is not already running, start interval
+    if(!playLive){
+        gameTimer = setInterval(function () {
+            totalSeconds--;
+            min = Math.floor(totalSeconds/60)
+            sec = Math.floor(totalSeconds%60)
+            
+            displayTime(min, sec);
+        }, 1000)
+        playLive = true;
+    } else return;
+}
+
+function pauseTimer() {
+    clearInterval(gameTimer);
+    playLive = false;
+}
+
+function resetTimer() {
+    pauseTimer();
+    totalSeconds = 1200;
+    min = 20;
+    sec = 0;
+    displayTime(20, 0);
+    playLive = false;
+    console.log(totalSeconds);
+    console.log(playLive);
+}
+
+function displayTime(min, sec) {
+    if (sec < 10) {
+        clockEl.innerHTML = `${min}:0${sec}`
+    }
+    else clockEl.innerHTML = `${min}:${sec}`
+}
+
+// Toggle possesion arrow
+function togglePossession(team) {
+
+    let awayArrow = document.getElementById("left-poss")
+    let homeArrow = document.getElementById("right-poss")
+    awayArrow.classList.toggle('has-poss')
+    homeArrow.classList.toggle('has-poss')
+
+}
